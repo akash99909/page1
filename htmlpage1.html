@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="maincontainer">
+      <div class="anscontainer">
+        <form method='post' action='http://localhost:5000/form1'>
+            <div class="firstcontainer">
+                <input type="text" class="toshow" value="Existing Data Size">
+                <input name="sum" value="">
+            </div>
+            <div class="secondcontainer">
+                <input type="text" class="toshow" value="Overall Average Estimated % Quaterly Volume">
+                <input name="sum" value="">
+            </div>
+            <div class="thirdcontainer">
+                <input type="text" class="toshow" value="Incremental">
+                <input name="sum" value="">
+            </div>
+        </form>
+      </div>
+    
+      <div class="boxcontainer">
+          <button onclick="addRows()">Add New Column </button>
+    
+      </div>
+    </div>
+    <div class="secondcontainer">
+        <input type="text"  class="toprow" value="Existing System Analysis"  >
+    </div>
+    <div class="allheadings">
+        <input value="Object ID"class="b"><input value="System Name"class="b"><input value="Schema Name"class="b"><input value="Database Name"class="b"><input value="Object/Table Name"class="b"><input value="No. of Columns"class="b"><input value="Record Count"class="b"><input value="Partition Column"class="b"><input value="Primary Index Column"class="b"><input value="Secondary Index Column"class="b"><input value="Table Size (GB)"class="b"><input value="Average Estimated Growth(%) Volume Quaterly"class="b">
+    </div>
+    <form action = "/HTMLPage1.html" method="POST">
+        <div class="newColumn">
+            <input name="sen1[]"class="inputbox"><input name="sen2[]"class="inputbox"><input name="sen3[]"class="inputbox"><input name="sen4[]"class="inputbox"><input name="sen5[]"class="inputbox"><input name="sen6[]"class="inputbox"><input name="sen7[]"class="inputbox"><input name="sen8[]"class="inputbox"><input name="sen9[]"class="inputbox"><input name="sen10[]"class="inputbox"><input name="sen11[]"class="inputbox"><input name="sen12[]"class="inputbox">
+        </div>
+        <input type="submit" value="Submit">
+    </form>
+
+</body>
+</html>
+<script>
+
+    function abc(a, b) {
+
+        return a * b;
+    }
+
+    function addRows() {
+        s = document.getElementsByClassName("newColumn");
+        o=document.getElementsByClassName("inputbox");
+        let rows;
+        rows=prompt("How many rows you want to add:", );
+        rows=Number(rows);
+        console.log(rows);
+        for(let  i=0;i<rows;i++){
+            obj = document.createElement("div");
+            obj.innerHTML = '<input name="sen1[]" class="allbox"><input name = "allbox" class="allbox"><input name="sen3[]"class="allbox"><input name="sen4[]"class="allbox"><input name="sen5[]"class="allbox"><input name="sen6[]"class="allbox"><input name="sen7[]"class="allbox"><input name="sen8[]"class="allbox"><input name="sen9[]"class="allbox"><input name="sen10[]" class="allbox"><input name="sen11[]"class="allbox"><input name="sen12[]"class="allbox">';
+            s[0].appendChild(obj);
+        }
+    }
+</script>
